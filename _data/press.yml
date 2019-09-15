@@ -1,0 +1,7 @@
+examplenews1:
+  title: "Example news coverage"
+  tag: "Brief description"
+  year: "2099"
+  month: "October"
+  venue: "News Source"
+  url: "http://www.iamnews.com"

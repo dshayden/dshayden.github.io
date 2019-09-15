@@ -1,0 +1,13 @@
+ex99:
+  title: "Cool Title"
+  abstract: "<p>
+  HTML abstract
+  </p>"
+  venue: "Venue"
+  year: "2099"
+  month: February
+  authors:
+    - dshayden
+    - someoneelse
+  tag: sometag
+  pdf: /publications/example-pub.pdf
