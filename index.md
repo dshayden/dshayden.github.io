@@ -17,7 +17,8 @@ Massachusetts Institute of Technology<br/>
 </td>
 </table>
 
-Short Bio
+My work is in interpretable machine learning that enables scientists to collect
+and quantify observations at scale.
 
 <h2 class="tableheading">Publications</h2>
 
