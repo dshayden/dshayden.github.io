@@ -17,8 +17,8 @@ Massachusetts Institute of Technology<br/>
 </td>
 </table>
 
-My work is in interpretable machine learning that enables scientists to collect
-and quantify observations at scale.
+I work in interpretable machine learning that enables scientists to collect,
+quantify and analyze observations at scale.
 
 <h2 class="tableheading">Publications</h2>
 
@@ -32,7 +32,7 @@ and quantify observations at scale.
           {%- if forloop.last == true and forloop.length > 1 %}
             and
           {%- endif %}
-          {%- if author == "kjolstad" %}
+          {%- if author == "dshayden" %}
             <font color="#000000">{{ site.data.authors[author].name }}</font>
           {%- else %}
             <a href="{{- site.data.authors[author].site -}}" style="color: #464646">{{ site.data.authors[author].name }}</a>
