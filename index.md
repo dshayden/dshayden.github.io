@@ -22,4 +22,4 @@ quantify and analyze observations at scale. By enabling automated interventions
 based on analysis, the tools I build aim to make new experimental designs
 possible from what once were observational studies.
 
-<h2 class="tableheading">Site under construction."</h2>
+<h2 class="tableheading">Site under construction.</h2>
