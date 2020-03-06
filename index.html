@@ -19,6 +19,22 @@
     text-align: left;
   }
 
+  .journal {
+    border-left: 2px solid red;
+  }
+
+  .conference {
+    border-left: 2px solid blue;
+  }
+
+  .workshop {
+    border-left: 2px solid green;
+  }
+
+  .book {
+    border-left: 2px solid #ffc107;
+  }
+
   .publogo { margin-right : 20px; }
   .publication { padding-left : 10px; padding-top : 10px; margin-bottom : 10px; }
   .publication strong a { color : #000; text-decoration  :none; }
@@ -183,19 +199,19 @@ $(document).ready(function() {
 <div class="order-0 col-12 px-4 papers-container papers-selected">
   <h4 class="paperhi paperhi-only">Publications
   <div class="btn-group btn-group-toggle" data-toggle="buttons">
-    <label class="btn btn-secondary active ml-3">
+    <label class="btn btn-outline-secondary active ml-3">
       <input type="radio" name="options" id="option_all" autocomplete="off" checked> All Papers
     </label>
-    <label class="btn btn-secondary">
+    <label class="btn btn-outline-primary">
       <input type="radio" name="options" id="option_conference" autocomplete="off"> Conference
     </label>
-    <label class="btn btn-secondary">
+    <label class="btn btn-outline-danger">
       <input type="radio" name="options" id="option_journal" autocomplete="off"> Journal
     </label>
-    <label class="btn btn-secondary">
+    <label class="btn btn-outline-warning">
       <input type="radio" name="options" id="option_book" autocomplete="off"> Book Chapter
     </label>
-    <label class="btn btn-secondary">
+    <label class="btn btn-outline-success">
       <input type="radio" name="options" id="option_workshop" autocomplete="off"> Workshop
     </label>
   </div> 
