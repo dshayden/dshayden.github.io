@@ -5,6 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -13,6 +14,9 @@
   .profile_image { margin-top: 10px; margin-bottom: 10px; }
   #news li:not(:last-child) {
     margin-bottom: 5px;
+  }
+  .tooltip-inner {
+    text-align: left;
   }
 
   .publogo { margin-right : 20px; }
@@ -98,6 +102,11 @@ $(document).ready(function() {
     $('.conference').hide();
     $('.journal').hide();
   });
+
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+  })
+  
 });
 </script>
 
@@ -393,14 +402,14 @@ $(document).ready(function() {
     </ul>
   <h4>Funding and Awards</h4>
     <ul>
-      <li><a href="https://projectreporter.nih.gov/project_info_description.cfm?aid=9520535&icde=0">NIH Grant 1R01MH111916-01A1 (2018-2020)*</a></li>
-      <li><a href="https://mcgovern.mit.edu/tile/mint/">McGovern Institute Neurotechnology (MINT) Grant (2018, 2019)*</a></li>
+      <li><a data-toggle="tooltip" data-placement="top" title="This grant was a result of collaboration between Rogier Landman and I." href="https://projectreporter.nih.gov/project_info_description.cfm?aid=9520535&icde=0">NIH Grant 1R01MH111916-01A1 (2018-2020)*</a></li>
+      <li><a data-toggle="tooltip" data-placement="top" title="This grant was a result of collaboration between Rogier Landman and I." href="https://mcgovern.mit.edu/tile/mint/">McGovern Institute Neurotechnology (MINT) Grant (2018, 2019)*</a></li>
       <li><a href="https://www.nsfgrfp.org/">NSF Graduate Research Fellowship (through 2016)</a></li>
       <li><a href="https://www.google.com/glass/start/">Google Glass Accessibility Award (2014)</a></li>
       <li><a href="https://www.idsa.org/awards/idea/graduate-student-designs/note-taker-product-students-low-vision">IDSA Design Award (Silver, 2011)</a></li>
       <li><a href="https://news.microsoft.com/2011/07/13/microsoft-reveals-imagine-cup-2011-winners-unveils-3-million-grant-program/">Microsoft Imagine Cup Software Design 2011 (2nd Place)</a></li>
       <li><a href="https://www.statepress.com/article/2010/07/students-create-note-taking-device-for-visually-impaired">Microsoft Imagine Cup Accessibility 2010 (1st Place)</a></li>
-      <li><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0931278">NSF Grant #0931278 (2009 - 2013)*</a></li>
+      <li><a data-toggle="tooltip" data-placement="top" title="This grant was a result of a project I started in Sethuraman Panchanathan's lab."   href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0931278">NSF Grant #0931278 (2009 - 2013)*</a></li>
     </ul>
 </div> </div> </div> </div>
 </div>
