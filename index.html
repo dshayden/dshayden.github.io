@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>David S. Hayden - Massachusetts Institute of Technology - Machine Learning and Computer Vision </title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+<style>
+  .profile_image { margin-top: 10px; margin-bottom: 10px; }
+  #news li:not(:last-child) {
+    margin-bottom: 5px;
+  }
+
+  .publogo { margin-right : 20px; }
+  .publication { padding-left : 10px; padding-top : 10px; margin-bottom : 10px; }
+  .publication strong a { color : #000; text-decoration  :none; }
+  .publication strong a:hover { text-decoration : underline; }
+  .publication .links a { margin-right : 15px; }
+  ul{ list-style:none; padding:0; margin:0; }
+  ul ul { padding-top : 6px; list-style : disc; padding-left : 40px; }
+  a, a:hover{ color: rgb(0, 114, 206); }
+  ul li { padding-bottom:6px; }
+  .nameplate {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .topbar { background-color:rgb(220,220,220); }
+  /* .topbar { background-color:rgb(255,255,255); } */
+  /* .darker { background-color:rgb(240,240,240); } */
+  .darker { background-color:rgb(220,220,220); }
+  .lighter { background-color:rgb(240,240,240); }
+  h4, h5 { color:#424242; }
+  h4 { margin-top : 30px; }
+
+  .papers-selected h5, .papers-selected h4 { display : none; }
+  .papers-selected .publication { display : none; }
+  .paperhi-only { display : none; }
+  .papers-selected .paperhi { display : flex; }
+  .papers-selected .paperlo { display : none; }
+
+  @media (prefers-color-scheme: dark) {
+    body {
+      background-color : rgb(40, 40, 40); 
+      color : #fff;
+    }
+    .topbar, .darker {
+      background-color : rgb(20, 20, 20);
+      color : #fff;
+    }
+    h4, h5 { color : #ccc; }
+    a, a:hover{ color: rgb(97, 185, 255) }
+    .publication strong a { color : #fff; }
+  }
+</style>
+
+<script>
+$(document).ready(function() {
+  $('.paperhi button').click(function() {
+     $('.papers-container').removeClass('papers-selected');
+  });
+  $('.paperlo button').click(function() {
+     $('.papers-container').addClass('papers-selected');
+  });
+
+});
+</script>
+
+<div class="topbar">
+<div class="container">
+<div>
+  <div class="row mt-0">
+    <div class="col-8 col-sm-6 col-md-4 col-lg-3 pl-4 pt-4 pt-md-0"><a href="media/profile.jpg"><img alt="" src="media/profile.jpg" id="me" class="float-left img-fluid rounded-circle profile_image"></a></div>
+      <div class="col-12 col-md-8 pl-4 py-4 py-md-1 nameplate">
+        <h3>David S. Hayden</h3>
+        <p style="line-height:1.2;">
+          PhD Candidate<br>
+          Computer Science and Artificial Intelligence Laboratory<br>
+          Massachusetts Institute of Technology<br>
+          <br>
+          Office: 32-D475a<br>
+          Address: 32 Vassar St., Cambridge, MA 02142<br>
+          Email: dshayden [at] mit [dot] edu
+        </p>
+      </div> <!-- col-12... -->
+    </div> <!-- col-8... -->
+  </div> <!-- row mt-0 -->
+</div> <!-- unnamed -->
+</div> <!-- container -->
+</div> <!-- topbar -->
+
+<div class="lighter">
+<div class="container">
+<div>
+<div class="row">
+  <div class="col-lg-6 order-0 col-12 px-4 papers-container papers-selected">
+    <h4 class="paperhi">Research</h4>
+    <p>
+      My research interests are in interpretable machine learning and computer vision,
+      with special focus on Bayesian nonparametrics applied to time-series,
+      distributions on manifolds and using uncertainty to guide decision making,
+      analysis and experimental design.
+      <br><br>
+      I am specifically interested in enabling scientists to collect,
+      analyze and react to observations at scale. By working towards automated
+      interventions, the tools I build aim to make new experimental designs possible
+      from what once were observational studies.
+    </p>
+  </div> <!-- col-lg-6 -->
+  <div class="col-lg-6 order-0 col-12 px-4 papers-container papers-selected">
+    <h4 class="paperhi">News</h4>
+    <ul id="news">
+      <li> <a href="http://assistivetech.mit.edu/">ATHack 2020</a> was a resounding success. Great work to all involved and thanks to my fellow organizers for bringing me on! </li>
+      <li> My paper <a href="#paper_npp">Nonparametric Object and Parts Modeling with Lie Group Dynamics</a> was accepted at CVPR 2020. </li>
+      <li> Our paper <a href="#paper_atypical">Atypical behaviour and connectivity in SHANK3-mutant macaques</a> was published in Nature, June 2019. </li>
+    </ul>
+  </div> <!-- col-lg-6 -->
+</div> <!-- row -->
+</div> <!-- unnamed -->
+</div> <!-- container -->
+</div> <!-- lighter -->
+
+<div>
+<div class="container">
+<div>
+<div class="row">
+<div class="order-0 col-12 px-4 papers-container papers-selected">
+  <h4 class="paperhi paperhi-only">Publications
+  <div class="btn-group btn-group-toggle" data-toggle="buttons">
+    <label class="btn btn-secondary active ml-3">
+      <input type="radio" name="options" id="option_all" autocomplete="off" checked> All Papers
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option_conference" autocomplete="off"> Conference
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option_journal" autocomplete="off"> Journal
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option_book" autocomplete="off"> Book Chapter
+    </label>
+    <label class="btn btn-secondary">
+      <input type="radio" name="options" id="option_workshop" autocomplete="off"> Workshop
+    </label>
+  </div> 
+  </h4>
+
+  <div class="publication media paperhi conference">
+  <!-- <a href="papers/dummy.pdf"><img alt="" src="media/npp.png" class="publogo float&#45;left rounded g" width="100" style="padding&#45;top: 25px;"></a> -->
+  <img alt="" src="media/npp.png" class="publogo float-left rounded g" width="100" style="padding-top: 25px;">
+  <div class="media-body">
+  <!-- <p><strong><a href="papers/dummy.pdf"> -->
+  <!-- Nonparametric Object and Parts Modeling with Lie Group Dynamics -->
+  <!-- </a></strong> -->
+  <p><strong>
+    <a id="paper_npp">
+    Nonparametric Object and Parts Modeling with Lie Group Dynamics
+    </a>
+  </strong>
+  <br>
+  David S. Hayden, Jason Pacheco, John W. Fisher III <br>
+  <em>CVPR 2020</em><br>
+  <span class="links">
+    Coming Soon
+    <!-- <a href="papers/dummy.pdf">Paper</a> -->
+    <!-- <a href="projects/dummy.html">Project Page</a> -->
+    <!-- <a href="https://github.com/dshayden">Code</a> -->
+  </span> 
+  </div>
+  </div>
+
+  <div class="publication media paperhi journal">
+  <a href="papers/nature2019.pdf"><img alt="" src="media/nature_social.jpg" class="publogo float-left rounded g" width="100" ></a>
+  <div class="media-body">
+  <p><strong><a href="papers/nature2019.pdf" id="paper_atypical">
+  Atypical Behaviour and Connectivity in SHANK3-Mutant Macaques
+  </a></strong>
+  <br>
+  Yang Zhou, Jitendra Sharma, Qiong Ke, Rogier Landman, Jingli Yuan, Hong Chen, David S. Hayden et al. <br>
+  <em>Nature, June 2019</em><br>
+  <span class="links">
+    <a href="papers/nature2019.pdf">Paper</a>
+    <!-- <a href="projects/dummy.html">Project Page</a> -->
+    <!-- <a href="https://github.com/dshayden">Code</a> -->
+  </span> 
+  </div>
+  </div>
+
+  <div class="publication media paperhi workshop">
+  <a href="papers/chi2014.pdf"><img alt="" src="media/social_wearable.jpg" class="publogo float-left rounded g" width="100" ></a>
+  <div class="media-body">
+  <p><strong><a href="papers/chi2014.pdf">
+  Unobtrusive, Wearable Social Interaction Detection and Assistance
+  </a></strong>
+  <br>
+  David S. Hayden, Robert C. Miller, Seth Teller <br>
+  <em>CHI 2014 Workshop on Assistive Augmentation</em><br>
+  <span class="links">
+    <a href="papers/chi2014.pdf">Paper</a>
+    <!-- <a href="projects/dummy.html">Project Page</a> -->
+    <!-- <a href="https://github.com/dshayden">Code</a> -->
+  </span> 
+  </div>
+  </div>
+
+  <div class="publication media paperhi workshop">
+  <a href="papers/cvpr2012.pdf"><img alt="" src="media/obtrusive.jpg" class="publogo float-left rounded g" width="100" style="padding-top: 15px;"></a>
+  <div class="media-body">
+  <p><strong><a href="papers/cvpr2012.pdf">
+  The Accuracy-Obtrusiveness Tradeoff for Wearable Vision Platforms
+  </a></strong>
+  <br>
+  David S. Hayden, Carl Vondrick, Stella Jia, Yafim Landa, Robert C. Miller, Antonio Torralba, Seth Teller <br>
+  <em>CVPR 2012 Workshop on Egocentric Vision</em><br>
+  <span class="links">
+    <a href="papers/cvpr2012.pdf">Paper</a>
+    <!-- <a href="projects/dummy.html">Project Page</a> -->
+    <!-- <a href="https://github.com/dshayden">Code</a> -->
+  </span> 
+  </div>
+  </div>
+
+  <div class="publication media paperhi journal">
+  <a href="papers/tist2012.pdf"><img alt="" src="media/titan.jpg" class="publogo float-left rounded g" width="100" style="padding-top: 5px;"   ></a>
+  <div class="media-body">
+  <p><strong><a href="papers/tist2012.pdf">
+  Using Clustering and Metric Learning to Improve Science Return of Remote Sensed Imagery
+  </a></strong>
+  <br>
+  David S. Hayden, Steve Chien, David R. Thompson, Rebecca Castaño<br>
+  <em>ACM Transactions on Intelligent Systems and Technology 2012</em><br>
+  <span class="links">
+    <a href="papers/tist2012.pdf">Paper</a>
+    <!-- <a href="projects/dummy.html">Project Page</a> -->
+    <!-- <a href="https://github.com/dshayden">Code</a> -->
+  </span> 
+  </div>
+  </div>
+
+  <div class="publication media paperhi conference">
+  <a href="papers/assets2011.pdf"><img alt="" src="media/note-taker3.0.jpg" class="publogo float-left rounded g" width="100" style="padding-top: 10px;" ></a>
+  <div class="media-body">
+  <p><strong><a href="papers/assets2011.pdf">
+  Note-Taker 3.0: an Assistive Technology Enabling Students who are Legally Blind to Take Notes in Class
+  </a></strong>
+  <br>
+  David S. Hayden, Michael Astrauskas, Qian Yan, Liqing Zhou, John A. Black Jr.<br>
+  <em>ASSETS 2011</em><br>
+  <span class="links">
+    <a href="papers/assets2011.pdf">Paper</a>
+    <!-- <a href="projects/dummy.html">Project Page</a> -->
+    <!-- <a href="https://github.com/dshayden">Code</a> -->
+  </span> 
+  </div>
+  </div>
+
+  <div class="publication media paperhi book">
+  <a href="https://books.google.com/books?hl=en&lr=&id=NQycDT_UVpMC&oi=fnd&pg=PA65&ots=eBWjTgx4dA&sig=-DzUtQ5MLTUOWGqoygfnSugTEzU#v=onepage&q&f=false "><img alt="" src="media/note-taker-concept.jpg" class="publogo float-left rounded g" width="100" style="padding-top: 5px;"></a>
+  <div class="media-body">
+  <p><strong><a href="https://books.google.com/books?hl=en&lr=&id=NQycDT_UVpMC&oi=fnd&pg=PA65&ots=eBWjTgx4dA&sig=-DzUtQ5MLTUOWGqoygfnSugTEzU#v=onepage&q&f=false">
+  The Note-Taker: a Tablet PC Based Device that Helps Students Take and Review Classroom Notes
+  </a></strong>
+  <br>
+  David S. Hayden, Liqing Zhou, John A. Black Jr.<br>
+  <em>The Impact of Tablet PCs and Pen-based Technology on Education (2010, ISBN: 1557535744)</em><br>
+  <span class="links">
+    <a href="https://books.google.com/books?hl=en&lr=&id=NQycDT_UVpMC&oi=fnd&pg=PA65&ots=eBWjTgx4dA&sig=-DzUtQ5MLTUOWGqoygfnSugTEzU#v=onepage&q&f=false">Paper</a>
+    <!-- <a href="projects/dummy.html">Project Page</a> -->
+    <!-- <a href="https://github.com/dshayden">Code</a> -->
+  </span> 
+  </div>
+  </div>
+
+
+  <div class="publication media paperhi conference">
+  <a href="papers/assets2010.pdf"><img alt="" src="media/note-taker2.0.jpg" class="publogo float-left rounded g" width="100" ></a>
+  <div class="media-body">
+  <p><strong><a href="papers/assets2010.pdf">
+  Note-Taker 2.0: the Next Step Toward Enabling Students who are Legally Blind to Take Notes in Class
+  </a></strong>
+  <br>
+  David S. Hayden, Liqing Zhou, Michael Astrauskas, John A. Black Jr.<br>
+  <em>ASSETS 2010</em><br>
+  <span class="links">
+    <a href="papers/assets2010.pdf">Paper</a>
+    <!-- <a href="projects/dummy.html">Project Page</a> -->
+    <!-- <a href="https://github.com/dshayden">Code</a> -->
+  </span> 
+  </div>
+  </div>
+
+  <div class="publication media paperhi conference">
+  <a href="papers/assets2008.pdf"><img alt="" src="media/note-taker1.0.jpg" class="publogo float-left rounded g" width="100" ></a>
+  <div class="media-body">
+  <p><strong><a href="papers/assets2008.pdf">
+  Note-Taker: Enabling Students who are Legally Blind to Take Notes in Class
+  </a></strong>
+  <br>
+  David S. Hayden, Dirk Colbry, John A. Black Jr., Sethuraman Panchanathan<br>
+  <em>ASSETS 2008</em><br>
+  <span class="links">
+    <a href="papers/assets2008.pdf">Paper</a>
+    <!-- <a href="projects/dummy.html">Project Page</a> -->
+    <!-- <a href="https://github.com/dshayden">Code</a> -->
+  </span> 
+  </div>
+  </div>
+</div> <!-- order-0 -->
+</div> <!-- row -->
+</div> <!-- unnamed -->
+</div> <!-- container -->
+</div> <!-- unnamed -->
+
+<div class="lighter">
+<div class="container">
+<div>
+<div class="row">
+<div class="col-lg-6 col-12 px-4 order-1">
+  <h4>Press</h4>
+    <ul>
+      <li><a href="https://www.youtube.com/watch?v=EvhYZKnEk5Y">Mini Documentary: Blind Ambition</a></li>
+      <li><a href="https://www.npr.org/2011/04/15/135442950/note-taking-made-easy-for-legally-blind-students">NPR Science Friday with Ira Flattow</a></li>
+      <li><a href="https://www.wired.com/2012/06/imagine-cup-alumni-spotlight-note-taker/">Wired</a></li>
+      <li><a href="https://www.bostonmagazine.com/health/2013/12/17/mit-fifth-sense-project-blind/">Boston Magazine</a></li>
+      <li><a href="https://slate.com/technology/2015/03/the-best-adaptive-technologies-are-designed-by-people-with-disabilities.html">Slate</a></li>
+      <li><a href="https://www.geekwire.com/2011/project-won-microsofts-imagine-cup/">Geek Wire</a></li>
+      <li><a href="https://www.independent.co.uk/life-style/gadgets-and-tech/student-made-note-taking-solution-for-vision-impaired-wins-us-finals-of-imagine-cup-2267048.html">Independent</a></li>
+    </ul>
+  <h4>Service, Teaching and Invited Presentations</h4>
+    <ul>
+      <li><a href="http://music.fas.harvard.edu/courseschedule.shtml">Invited Class Lecture (Harvard, February, 2020, AI and Music)</a></li>
+      <li><a href="http://assistivetech.mit.edu/">ATHack 2020 Co-Organizer</a></li>
+      <li><a href="http://ppat.mit.edu/fall2019/index.html">MIT 6.811 TA (Principles and Practices of Assistive Technology), 2013</a></li>
+      <li><a href="https://www.andreabocellifoundation.org/workshop/">Andrea Bocelli Foundation Workshop Organizer (2013)</a></li>
+      <li><a href="https://www.wired.com/2012/02/microsoft&#45;white&#45;house&#45;science&#45;fair/">White House Science Fair with President Obama (2012)</a></li>
+    </ul>
+  <!-- <h4>Code and Data</h4> -->
+  <!--   <ul> -->
+  <!--   </ul> -->
+</div>
+<div class="col-lg-6 col-12 px-4 order-1 pb-4">
+  <h4>Links</h4>
+    <ul>
+      <!-- <li>Curriculum Vitae</li> -->
+      <li><a href="https://scholar.google.com/citations?user=EysbmrUAAAAJ&#38;hl=en&#38;oi=ao">Google Scholar</a></li>
+      <li><a href="https://github.com/dshayden/">Github</a></li>
+    </ul>
+  <h4>Funding and Awards</h4>
+    <ul>
+      <li><a href="https://projectreporter.nih.gov/project_info_description.cfm?aid=9520535&icde=0">NIH Grant 1R01MH111916-01A1 (2018-2020)*</a></li>
+      <li><a href="https://mcgovern.mit.edu/tile/mint/">McGovern Institute Neurotechnology (MINT) Grant (2018, 2019)*</a></li>
+      <li><a href="https://www.nsfgrfp.org/">NSF Graduate Research Fellowship (through 2016)</a></li>
+      <li><a href="https://www.google.com/glass/start/">Google Glass Accessibility Award (2014)</a></li>
+      <li><a href="https://www.idsa.org/awards/idea/graduate-student-designs/note-taker-product-students-low-vision">IDSA Design Award (Silver, 2011)</a></li>
+      <li><a href="https://news.microsoft.com/2011/07/13/microsoft-reveals-imagine-cup-2011-winners-unveils-3-million-grant-program/">Microsoft Imagine Cup Software Design 2011 (2nd Place)</a></li>
+      <li><a href="https://www.statepress.com/article/2010/07/students-create-note-taking-device-for-visually-impaired">Microsoft Imagine Cup Accessibility 2010 (1st Place)</a></li>
+      <li><a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=0931278">NSF Grant #0931278 (2009 - 2013)*</a></li>
+    </ul>
+</div> </div> </div> </div>
+</div>
+
+
+</body>
+</html>
