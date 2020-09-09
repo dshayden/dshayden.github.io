@@ -1,0 +1,39 @@
+Title
+Probabilistic Reasoning on Lie Groups with Application to Nonparametric Object
+and Parts Modeling.
+
+Abstract
+Articulated motion analysis often utilizes strong prior knowledge such as a
+known or trained parts model for humans. Yet, the world contains a variety of
+articulating objects--mammals, insects, mechanized structures--where the number
+and configuration of parts for a particular object is unknown in advance. Here,
+we relax such strong assumptions via an unsupervised, Bayesian nonparametric
+parts model that infers an unknown number of parts with motions coupled by a
+body dynamic and parameterized by SE(D), the Lie group of rigid transformations.
+We derive an inference procedure that utilizes short observation sequences
+(image, depth, point cloud or mesh) of an object in motion without need for
+markers or learned body models. Novel and efficient Gibbs decompositions for
+inference over distributions on SE(D) demonstrate robust part decompositions of
+moving objects under both 3D and 2D observation models. The inferred
+representation permits new analysis, such as object segmentation by relative
+part motion, and transfers to new observations of the same object type. Although
+this talk focuses on SO(D) and SE(D), we introduce probabilistic reasoning over
+general matrix Lie groups.
+
+Bio
+David's research enables scientists to collect, analyze and react to
+observations at scale. By working towards automated interventions, he aims to
+make new experimental designs possible from what once were observational
+studies.
+
+Broadly, his research interests are in interpretable machine learning and
+computer vision, with special focus on Bayesian nonparametrics applied to
+time-series, distributions on manifolds and using uncertainty to guide decision
+making, analysis and experimental design.
+
+David is a PhD student with John Fisher at CSAIL, MIT. He has won awards or
+worked with Google, Microsoft, NASA and the Industrial Designers Society of
+America. He has received the NSF Graduate Research Fellowship and his work has
+led to grants from the NSF and NIH. He has been interviewed by national outlets
+including NPR and Wired and once upon a time founded Essistive
+through which he licensed assistive technologies.
