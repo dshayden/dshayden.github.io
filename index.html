@@ -60,6 +60,10 @@
   h4, h5 { color:#424242; }
   h4 { margin-top : 30px; }
 
+  @media (min-width: 992px) {
+    .research-heading { margin-top: 4rem; }
+  }
+
   .papers-selected h5, .papers-selected h4 { display : none; }
   .papers-selected .publication { display : none; }
   .paperhi-only { display : none; }
@@ -177,7 +181,7 @@ $(document).ready(function() {
       Series A rounds, and been published in top venues including ICML, CVPR,
       NeurIPS, and Nature.
     </p>
-    <h4 class="paperhi mt-lg-5">Research</h4>
+    <h4 class="paperhi research-heading">Research</h4>
     <p>
       My research focuses on posttraining, multimodal speech-to-speech systems,
       world modeling, and uncertainty quantification. Broad themes include
@@ -196,6 +200,10 @@ $(document).ready(function() {
         assistants based on remote expert-in-the-loop data at CVPR 2026.
       </li>
       <li> I joined Meta to work on Muse posttraining in January 2026.
+      </li>
+      <li> Our work on world models, longtail synthetic data, and epistemic
+        uncertainty <strong><a href="https://slideslive.com/39055643/toward-general-full-autonomy-open-research-challenges-in-scalable-selfdriving?time=2213s">was
+        presented at NeurIPS 2025</a></strong>.
       </li>
       <li> My paper <strong><a href="https://arxiv.org/pdf/2502.01980">
         Generative Data Mining with Longtail-Guided Diffusion
